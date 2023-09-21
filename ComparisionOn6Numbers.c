@@ -5,7 +5,7 @@
 int main()
 {
     int a, b, c, d, e, f, g, h, i, j;
-    printf("Note, Each and every number must be distinct.\n\n");
+    printf("Note, at least one number should be distinct.\n\n");
     printf("Enter the first number:    ");
     scanf("%d", &a);
     printf("Enter the second number:    ");
