@@ -1,30 +1,9 @@
 #include <stdio.h>
-float kmstomiles(float kms)
-{
-    return (kms * 0.621371192);
-}
-float inchestofoot(float inches)
-{
-    return (inches * 0.0833333333);
-}
-float cmstoinches(float cms)
-{
-    return (cms * 0.393700787);
-}
-float poundstokgs(float pound)
-{
-    return (pound * 0.45359237);
-}
-float inchestometers(float inch)
-{
-    return (inch * 0.0254);
-}
 int main()
 {
     float a;
     int i;
     printf("To convert kilometer to mile press 1.\nTo convert inch to foot press 2.\nTo convert centimeter to inch press 3.\nTo convert pound to kilogram press 4.\nTo convert inch to meter press 5.\nOr press 6 to quit.\n\n");
-    start:
     printf("\nPress the key that you have chosen:\t");
     scanf("%d", &i);
     if (0<i && i<6)
@@ -35,25 +14,26 @@ int main()
     switch (i)
     {
     case 1:
-        printf("%.3f kilometers is equal to %.3f miles\n", a, kmstomiles(a));
-        goto start;
+        printf("%.3f kilometers is equal to %.3f miles\n", a, a * 0.621371192);
+        break;
     case 2:
-        printf("%.3f inches is equal to %.3f foots\n", a, inchestofoot(a));
-        goto start;
+        printf("%.3f inches is equal to %.3f foots\n", a, a * 0.0833333333);
+        break;
     case 3:
-        printf("%.3f centimeters is equal to %.3f inches\n", a, cmstoinches(a));
-        goto start;
+        printf("%.3f centimeters is equal to %.3f inches\n", a, a *  0.393700787);
+        break;
     case 4:
-        printf("%.3f pounds is equal to %.3f kilograms\n", a, poundstokgs(a));
-        goto start;
+        printf("%.3f pounds is equal to %.3f kilograms\n", a, a * 0.45359237);
+        break;
     case 5:
-        printf("%.3f inches is equal to %.3f metres\n", a, inchestometers(a));
-        goto start;
+        printf("%.3f inches is equal to %.3f metres\n", a, a * 0.0254);
+        break;
     case 6:
         printf("Thankyou for using C language !\nKeep learning more and more.\nHave a good day.");
-        break;
+        goto end;
     default:
-        printf("You have prssed a wrong key. Please press rigt key");
-        break;
+        printf("You have pressed a wrong key. If you want to perform unit conversion then RUN the program again. but this time, Do not press any wrong key.");
     }
+    end:
+    return 0;
 }
