@@ -1,9 +1,2 @@
 bjhcbchjc
 hkjsdcbdsjck
-xukdscgdjcksd
-bvcjhdsvcjhms
-jkchnsldj
-chlksdhcskjdnfkvnckx,nv
-cvmb
-cndkjcndskjnvkfdvn
-cndcndjcndkcn
