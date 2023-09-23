@@ -1,39 +1,80 @@
+/* Wright a program for unit coversion. Take value of one unit input from the user and Write a program to print the value of second unit. */
+
 #include <stdio.h>
+
 int main()
 {
-    float a;
-    int i;
-    printf("To convert kilometer to mile press 1.\nTo convert inch to foot press 2.\nTo convert centimeter to inch press 3.\nTo convert pound to kilogram press 4.\nTo convert inch to meter press 5.\nOr press 6 to quit.\n\n");
-    printf("\nPress the key that you have chosen:\t");
-    scanf("%d", &i);
-    if (0<i && i<6)
+    char a, b, c;
+    float Kilometers, Inches, Centimeters, Pounds, Inche;
+start:
+    printf("\nDo you want to perform unit conversion? [If 'Yes' Press 'Y'] , [If 'No' Press 'N']:  ");
+    scanf("  %c", &a);
+    while (1)
     {
-        printf("Enter the number which you want to convert:\t");
-        scanf("%f", &a);
+        switch (a)
+        {
+        case 'Y':
+        middle:
+            printf("\n   Press 'A' to convert Kilometers to Miles.\n   Press 'B' to convert Inches to Foots.\n   Press 'C' to convert Centimeters to Inches.\n   Press 'D' to convert Pounds to Kilograms.\n   Press 'E' to convert Inches to Metres.\n   PRESS 'Q' TO QUIT THE PROGRAM.\n\n");
+            scanf("  %c", &b);
+
+            switch (b)
+            {
+            case 'A':
+                printf("Enter in Kilometers:  ");
+                scanf("%f", &Kilometers);
+                printf("%.3f Kilometers = %.3f Miles\n\npress any key to perform more unit conversions:  ", Kilometers, Kilometers * 0.621371192);
+                scanf("  %c", &c);
+                break;
+
+            case 'B':
+                printf("Enter in Inches:  ");
+                scanf("%f", &Inches);
+                printf("%.3f Inches = %.3f Foots\n\npress any key to perform more unit conversions:  ", Inches, Inches * 0.0833333333);
+                scanf("  %c", &c);
+                break;
+
+            case 'C':
+                printf("Enter inCentimeters:  ");
+                scanf("%f", &Centimeters);
+                printf("%.3f Centimeters = %.3f inches\n\npress any key to perform more unit conversions:  ", Centimeters, Centimeters * 0.393700787);
+                scanf("  %c", &c);
+                break;
+
+            case 'D':
+                printf("Enter in Pounds:  ");
+                scanf("%f", &Pounds);
+                printf("%.3f Pounds = %.3f Kilograms\n\npress any key to perform more unit conversions:  ", Pounds, Pounds * 0.45359237);
+                scanf("  %c", &c);
+                break;
+
+            case 'E':
+                printf("Enter in Inche:  ");
+                scanf("%f", &Inche);
+                printf("%.3f Inche = %.3f Meters\n\npress any key to perform more unit conversions:  ", Inche, Inche * 0.0254);
+                scanf("  %c", &c);
+                break;
+
+            case 'Q':
+                printf("\nThankyou so much for using C program!\nKeep learning more and more\nHave a good day.\n");
+                goto end;
+
+            default:
+                printf("\nYou have pressed a wrong key. Please press any one key from ['A', 'B', 'C', 'D', 'E', 'Q']\n");
+                goto middle;
+                break;
+            }
+            break;
+
+        case 'N':
+            printf("\nThankyou so much for using C program!\nKeep learning more and more\nHave a good day.\n");
+            goto end;
+
+        default:
+            printf("You have pressed a wrong key. please press 'Y' or 'N'\n");
+            goto start;
+        }
     }
-    switch (i)
-    {
-    case 1:
-        printf("%.3f kilometers is equal to %.3f miles\n", a, a * 0.621371192);
-        break;
-    case 2:
-        printf("%.3f inches is equal to %.3f foots\n", a, a * 0.0833333333);
-        break;
-    case 3:
-        printf("%.3f centimeters is equal to %.3f inches\n", a, a *  0.393700787);
-        break;
-    case 4:
-        printf("%.3f pounds is equal to %.3f kilograms\n", a, a * 0.45359237);
-        break;
-    case 5:
-        printf("%.3f inches is equal to %.3f metres\n", a, a * 0.0254);
-        break;
-    case 6:
-        printf("Thankyou for using C language !\nKeep learning more and more.\nHave a good day.");
-        goto end;
-    default:
-        printf("You have pressed a wrong key. If you want to perform unit conversion then RUN the program again. but this time, Do not press any wrong key.");
-    }
-    end:
+end:
     return 0;
 }
