@@ -4,64 +4,37 @@
 
 int main()
 {
-    int a, b, c, d, e, f, g, h, i, j;
-    printf("Note, at least one number should be distinct.\n\n");
-    printf("Enter the first number:    ");
-    scanf("%d", &a);
-    printf("Enter the second number:    ");
-    scanf("%d", &b);
-    printf("Enter the third number:    ");
-    scanf("%d", &c);
-    printf("Enter the fourth number:    ");
-    scanf("%d", &d);
-    printf("Enter the fifth number:    ");
-    scanf("%d", &e);
-    printf("Enter the sixth number:    ");
-    scanf("%d", &f);
-
-    if (a>b)
+    int arr[10], i;
+    for (i = 0; i < 6; i++)
     {
-        g = a;
+        printf("Enter the number %d:   ", i + 1);
+        scanf("%d", &arr[i]);
     }
+
+    if (arr[0] > arr[1])
+        arr[6] = arr[0];
     else
-    {
-        g = b;
-    }
+        arr[6] = arr[1];
 
-    if (c>d)
-    {
-        h = c;
-    }
-    else{
-        h = d;
-    }
-
-    if (e>f)
-    {
-        i = e;
-    }
+    if (arr[2] > arr[3])
+        arr[7] = arr[2];
     else
-    {
-        i = f;
-    }
+        arr[7] = arr[3];
 
-    if (g>h)
-    {
-        j = g;
-    }
+    if (arr[5] > arr[6])
+        arr[8] = arr[5];
     else
-    {
-        j = h;
-    }
+        arr[8] = arr[6];
 
-    if (i>j)
-    {
-        printf("\nThe greatest number is %d" ,i);
-    }
+    if (arr[6] > arr[7])
+        arr[9] = arr[6];
     else
-    {
-        printf("\nThe greatest number is %d" ,j);
-    }
+        arr[9] = arr[7];
+
+    if (arr[8] > arr[9])
+        printf("\nThe greatest number is %d\n", arr[8]);
+    else
+        printf("\nThe greatest number is %d\n", arr[9]);
 
     return 0;
 }
