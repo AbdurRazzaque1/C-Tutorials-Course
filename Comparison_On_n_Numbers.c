@@ -31,7 +31,7 @@ int main()
     return 0;
 }
 
-// Jnother way
+// Another way
 
 // #include <stdio.h>
 
