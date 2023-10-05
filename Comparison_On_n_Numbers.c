@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+// void greatest_of_n_numbers(); // Declaration of the function.
+
 void greater_number(int *a, int *b, int *c)
 {
     if (*a > *b)
@@ -35,7 +37,7 @@ int main()
 
 // #include <stdio.h>
 
-// int main()
+// void greatest_of_n_numbers()  // Defination of the function.
 // {
 //     int number, num, max;
 //     printf("On how many numbers do you want to perform comparison operation:   ");
