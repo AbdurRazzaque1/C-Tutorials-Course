@@ -14,3 +14,13 @@ int main()
     }
     return 0;
 }
+
+/*
+int* ptr;     this is a pointer
+void* ptr;    this is a void pointer
+void* ptr = NULL;  this is a NULL pointer
+int a = 3;
+int* ptr = &a;
+for some reason a is deleted then the pointer ptr becomes a hanging pointer
+int* ptr;    this is a wild pointer
+*/
