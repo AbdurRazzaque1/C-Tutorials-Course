@@ -88,7 +88,7 @@ int main()
 
         if (win == 3)
         {
-            printf("############Congratulations %s! You won the game three times in a row.#############\n\n", name);
+            printf("***********  Congratulations %s! You won the game three times in a row.  ***********\n\n", name);
             printf("Do you want to exit the game?\n{press \"Y\" for 'yes' OR press \"N\" for 'no'}:  ");
             scanf("%c", &comp);
             getchar();
