@@ -4,6 +4,7 @@
         "stdio.h": "c",
         "stdlib.h": "c",
         "string.h": "c",
-        "math.h": "c"
-    }
+        "math.h": "c",
+        "my_functions.h": "c"
+    },
 }
