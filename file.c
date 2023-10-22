@@ -6,12 +6,12 @@ char *wordReplace(char *, char *, char *); // Function declaration that replace 
 int main()
 {
     FILE *file = NULL;
-    char oldString[1000];
+    char oldString[200];
     char *finalString;
     file = fopen("letter.txt", "r");
     if (file != NULL)
     {
-        fgets(oldString, 1000, file);
+        fgets(oldString, 200, file);
         printf("The old string is:\n\n%s\n\n", oldString);
         // calling to the function wordReplace
         finalString = wordReplace(oldString, "{{name}}", "Razzaque");              // Function calling
