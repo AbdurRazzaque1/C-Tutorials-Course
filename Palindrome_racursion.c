@@ -28,7 +28,7 @@ int main()
 
 //  Making a function that checks whether a number is palindrome or not using recursion.
 
-int rPalindrome(int palin, int n)
+int rPalindrome(int palin, int n) // n is the number of digits of the number. and palin is the number. 
 {
     if (palin != 0)
     {
