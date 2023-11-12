@@ -5,6 +5,7 @@
         "stdlib.h": "c",
         "string.h": "c",
         "math.h": "c",
-        "my_functions.h": "c"
+        "my_functions.h": "c",
+        "type_traits": "c"
     },
 }
