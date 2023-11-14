@@ -14,7 +14,17 @@ void how_to_play();
 int swapcell(int *a, int *b, int *ptr);
 int right(int a, int b, int c, char *val, char *ptr);
 void playmove(int *a, int b, char *cmpmove, char *playermove, char *ptr);
-int func(int loopstart, int loopEnd, int loopIncrement, int a, int b, char *symbol, char *cmpmove, char *ptr1, int *ptr2);
+int imp_move(int loopstart, int loopEnd, int loopIncrement, int a, int b, char *symbol, char *cmpmove, char *ptr1, int *ptr2);
+
+/**************************************************************************************************/
+
+// Driver function of the program.
+int main()
+{
+    O_and_X(); // Calling the function that plays the "tic tac toe" game.
+
+    return 0;
+}
 
 /**************************************************************************************************/
 
@@ -23,10 +33,10 @@ void O_and_X()
 {
     char value[] = {'-', '-', '-', '-', '-', '-', '-', '-', '-'}; // This is the structure of "tic tac toe" game.
     int ticNo[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-    printf("************************************************************************\n");
-    printf("Let's play the game nammed \"tic tac toe\"\n");
+    printf("*******************************************************************\n");
+    printf("Let's play the game named \"tic tac toe\"\n");
     printf("If you don't know how to play this game, you can enter I (info)\n");
-    printf("************************************************************************\n\n");
+    printf("*******************************************************************\n\n");
 
     char player; /* This variable holds the value of the player */
     char cmp;    /* This variable holds the value of computer */
@@ -37,7 +47,7 @@ void O_and_X()
     srand(time(NULL));
 
     playAgain:
-    printf("Press enter key to start the game . . .");
+    printf("Press enter key to start the game . . . ");
     getchar();
     printf("\n");
     printf("ENTER 0 TO QUIT THE GAME.\n");
@@ -89,27 +99,27 @@ void O_and_X()
                 randNo = rand() % (8 - (2 * i + 1));
                 if (ticNo[1] != 0)
                 {
-                    if (func(0, 8, 3, 1, 2, &cmp, &cmp, value, ticNo))
+                    if (imp_move(0, 8, 3, 1, 2, &cmp, &cmp, value, ticNo))
                         goto here;
-                    if (func(0, 3, 1, 3, 6, &cmp, &cmp, value, ticNo))
+                    if (imp_move(0, 3, 1, 3, 6, &cmp, &cmp, value, ticNo))
                         goto here;
-                    if (func(0, 1, 1, 4, 8, &cmp, &cmp, value, ticNo))
+                    if (imp_move(0, 1, 1, 4, 8, &cmp, &cmp, value, ticNo))
                         goto here;
-                    if (func(2, 3, 1, 2, 4, &cmp, &cmp, value, ticNo))
+                    if (imp_move(2, 3, 1, 2, 4, &cmp, &cmp, value, ticNo))
                         goto here;
 
-                    if (func(0, 8, 3, 1, 2, &player, &cmp, value, ticNo))
+                    if (imp_move(0, 8, 3, 1, 2, &player, &cmp, value, ticNo))
                         goto here;
-                    if (func(0, 3, 1, 3, 6, &player, &cmp, value, ticNo))
+                    if (imp_move(0, 3, 1, 3, 6, &player, &cmp, value, ticNo))
                         goto here;
-                    if (func(0, 1, 1, 4, 8, &player, &cmp, value, ticNo))
+                    if (imp_move(0, 1, 1, 4, 8, &player, &cmp, value, ticNo))
                         goto here;
-                    if (func(2, 3, 1, 2, 4, &player, &cmp, value, ticNo))
+                    if (imp_move(2, 3, 1, 2, 4, &player, &cmp, value, ticNo))
                         goto here;
 
                     fs = swapcell(NULL, &randNo, ticNo);
                     playmove(NULL, fs, &cmp, &player, value);
-                    printf("************************************************************************\n\n");
+                    printf("*******************************************************************\n\n");
 
                 }
 
@@ -142,7 +152,7 @@ void O_and_X()
             }
             else if (cellNo == 0)
             {
-                printf("\nOk, the game is going ti quit.\n");
+                printf("\nOk, the game is going to quit.\n");
                 break;
             }
             else
@@ -167,22 +177,22 @@ void O_and_X()
             
             if (ticNo[0] != 0)
             {
-                if (func(0, 8, 3, 1, 2, &cmp, &cmp, value, ticNo))
+                if (imp_move(0, 8, 3, 1, 2, &cmp, &cmp, value, ticNo))
                     goto there;
-                if (func(0, 3, 1, 3, 6, &cmp, &cmp, value, ticNo))
+                if (imp_move(0, 3, 1, 3, 6, &cmp, &cmp, value, ticNo))
                     goto there;
-                if (func(0, 1, 1, 4, 8, &cmp, &cmp, value, ticNo))
+                if (imp_move(0, 1, 1, 4, 8, &cmp, &cmp, value, ticNo))
                     goto there;
-                if (func(2, 3, 1, 2, 4, &cmp, &cmp, value, ticNo))
+                if (imp_move(2, 3, 1, 2, 4, &cmp, &cmp, value, ticNo))
                     goto there;
 
-                if (func(0, 8, 3, 1, 2, &player, &cmp, value, ticNo))
+                if (imp_move(0, 8, 3, 1, 2, &player, &cmp, value, ticNo))
                     goto there;
-                if (func(0, 3, 1, 3, 6, &player, &cmp, value, ticNo))
+                if (imp_move(0, 3, 1, 3, 6, &player, &cmp, value, ticNo))
                     goto there;
-                if (func(0, 1, 1, 4, 8, &player, &cmp, value, ticNo))
+                if (imp_move(0, 1, 1, 4, 8, &player, &cmp, value, ticNo))
                     goto there;
-                if (func(2, 3, 1, 2, 4, &player, &cmp, value, ticNo))
+                if (imp_move(2, 3, 1, 2, 4, &player, &cmp, value, ticNo))
                     goto there;
 
                 fs = swapcell(NULL, &randNo, ticNo);
@@ -190,7 +200,7 @@ void O_and_X()
             }
 
             there:
-            printf("************************************************************************\n\n");
+            printf("*******************************************************************\n\n");
             fs = right(0, 1, 2, &cmp, value) || right(3, 4, 5, &cmp, value) || right(6, 7, 8, &cmp, value) || right(0, 3, 6, &cmp, value) || right(1, 4, 7, &cmp, value) || right(2, 5, 8, &cmp, value) || right(0, 4, 8, &cmp, value) || right(2, 4, 6, &cmp, value);
             if (fs)
             {
@@ -260,7 +270,7 @@ void O_and_X()
 
 /**************************************************************************************************/
 
-// This funtion manages occupied celll number and the cell number has to occupied
+// This funtion manages occupied cell number and the cell number has to occupied
 int swapcell(int *a, int *b, int *ptr)
 {
     static int st = 0;
@@ -338,7 +348,7 @@ void playmove(int *a, int b, char *cmpmove, char *playermove, char *ptr)
 /**************************************************************************************************/
 
 // This plays the important move of the Computer.
-int func(int loopstart, int loopEnd, int loopIncrement, int a, int b, char *symbol, char *cmpmove, char *ptr1, int *ptr2)
+int imp_move(int loopstart, int loopEnd, int loopIncrement, int a, int b, char *symbol, char *cmpmove, char *ptr1, int *ptr2)
 {
     int randNo;
 
@@ -376,23 +386,15 @@ int func(int loopstart, int loopEnd, int loopIncrement, int a, int b, char *symb
 void how_to_play()
 {
     printf("\n\n**********************************************************************************************\n\n");
-    printf("You have 2 choises, you can choose either symbol (O or X) to play your move. If you choose one symbol from two symbol, then Computer will get the remaining symbol.\n\nFor example:\n\nIf you choose X then Computer will get O\n\n\n");
-    printf("And to play your move:\n\nYou have select a cell by entering the cell number and Computer will also select a cell by choosing a cell number.\n\n\n");
+    printf("This game is played by two players. The first player is you and the second player is Computer. You have 2 choises, you can choose either symbol (O or X) to play your move. If you choose one symbol from two symbol, then Computer will get the remaining symbol.\n\nFor Example:\n\nIf you choose X then Computer will get O\n\n");
+    printf("To play your move You have to select a cell by entering the cell number and Computer will also select a cell by choosing a cell number.\n\n");
     printf("There are 9 cells numbered\n\n1    2    3\n\n4    5    6\n\n7    8    9\n\n");
     printf("For Example:\n\nIf you have choosen X and Computer got O and you have selected the cell 5. Then Computer will put X in the cell number 5 as your move, after that Computer will select a cell number (9) and put O in the selected cell number as Copmuter move\n\n");
-    printf("Which will be looking like this:\n\n-    -    -\n\n-    X    -\n\n-    -    O\n\n\n");
+    printf("Which will be looking like this:\n\n-    -    -\n\n-    X    -\n\n-    -    O\n\n");
+    printf("If you succeed in placing your symbol in a row, in a column or in a diagonal you will be the winner and vice versa.\n\n");
+    printf("For Example:\n\nX    X    X\n\n-    -    -\n\n-    -    -\n\nYou will be the winner.\n\n");
     printf("I hope you have understood, How to play the game.\n\n");
-    printf("**********************************************************************************************\n\n");
-}
-
-/**************************************************************************************************/
-
-// Driver function of the program.
-int main()
-{
-    O_and_X(); // Calling the function that plays the "tic tac toe" game.
-
-    return 0;
+    printf("**********************************************************************************************\n");
 }
 
 /**************************************************************************************************/
