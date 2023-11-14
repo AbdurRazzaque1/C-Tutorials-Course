@@ -28,21 +28,24 @@ void reverseStarPattern(int b)
 
 int main()
 {
-    int a, b;
+    int a = -1, b = 0;
 start:
     printf("Press 0 to print star pattern.\n            *\nLike this   **\n            ***\n            ****\nPress 1 to print star pattern.\n            ****\nLike this   ***\n            **\n            *\n\n");
     scanf("%d", &a);
+    getchar();
     switch (a)
     {
     case 0:
         printf("How many stars do you want to print at the bottom:   ");
         scanf("%d", &b);
+        getchar();
         starPattern(b);
         break;
 
     case 1:
         printf("How many stars do you want to print at the top:   ");
         scanf("%d", &b);
+        getchar();
         reverseStarPattern(b);
         break;
 
@@ -50,6 +53,7 @@ start:
         printf("Please enter 0 or 1 only.\n\n");
         break;
     }
+    a = -1;
     goto start;
     return 0;
 }
