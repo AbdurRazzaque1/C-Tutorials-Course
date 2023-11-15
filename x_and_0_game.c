@@ -96,8 +96,9 @@ void O_and_X()
                 playmove(&cellNo, -1, &cmp, &player, value);
                 swapcell(&cellNo, NULL, ticNo);
 
-                randNo = rand() % (8 - (2 * i + 1));
-                if (ticNo[1] != 0)
+                if (i < 4)
+                    randNo = rand() % (8 - (2 * i));
+                if (ticNo[0] != 0)
                 {
                     if (imp_move(0, 8, 3, 1, 2, &cmp, &cmp, value, ticNo))
                         goto here;
@@ -119,11 +120,11 @@ void O_and_X()
 
                     fs = swapcell(NULL, &randNo, ticNo);
                     playmove(NULL, fs, &cmp, &player, value);
-                    printf("*******************************************************************\n\n");
 
                 }
 
                 here:
+                printf("*******************************************************************\n\n");
                 fs = right(0, 1, 2, &cmp, value) || right(3, 4, 5, &cmp, value) || right(6, 7, 8, &cmp, value) || right(0, 3, 6, &cmp, value) || right(1, 4, 7, &cmp, value) || right(2, 5, 8, &cmp, value) || right(0, 4, 8, &cmp, value) || right(2, 4, 6, &cmp, value);
 
                 randNo = right(0, 1, 2, &player, value) || right(3, 4, 5, &player, value) || right(6, 7, 8, &player, value) || right(0, 3, 6, &player, value) || right(1, 4, 7, &player, value) || right(2, 5, 8, &player, value) || right(0, 4, 8, &player, value) || right(2, 4, 6, &player, value);
@@ -146,7 +147,7 @@ void O_and_X()
                 }
                 i++;
             }
-            else if (value[cellNo - 1] == 'O' || value[cellNo - 1] == 'X')
+            else if ((cellNo >= 1 && cellNo <= 9 && value[cellNo - 1] == 'O') || (cellNo >= 1 && cellNo <= 9 && value[cellNo - 1] == 'X'))
             {
                 printf("\nSorry! choose another cell number, becouse cell number %d is not empty.\n\n", cellNo);
             }
@@ -171,9 +172,9 @@ void O_and_X()
         while (1)
         {
             if (i == 0)
-                randNo = rand() % (8 - (2 * i));
+                randNo = rand() % 9;
             else
-                randNo = rand() % (8 - (2 * i + 1));
+                randNo = rand() % (9 - (2 * i));
             
             if (ticNo[0] != 0)
             {
@@ -238,7 +239,7 @@ void O_and_X()
                 }
                 i++;
             }
-            else if (value[cellNo - 1] == 'O' || value[cellNo - 1] == 'X')
+            else if ((cellNo >= 1 && cellNo <= 9 && value[cellNo - 1] == 'O') || (cellNo >= 1 && cellNo <= 9 && value[cellNo - 1] == 'X'))
             {
                 printf("\nSorry! choose another cell number, becouse cell number %d is not empty.\n\n", cellNo);
                 goto reEnter;
@@ -297,6 +298,7 @@ int swapcell(int *a, int *b, int *ptr)
         st++;
         return c;
     }
+
     if (*(ptr) == 0)
         return 1;
 
