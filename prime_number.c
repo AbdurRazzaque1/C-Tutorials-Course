@@ -15,7 +15,7 @@ int main()
             }
             if (j==3)
             {
-                break;
+                break; 
             }
         }
         
